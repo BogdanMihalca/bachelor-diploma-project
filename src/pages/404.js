@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout/Layout"
-import Seo from "../components/seo"
+import Layout from "../components/common/Layout/Layout"
+import Seo from "../components/common/seo"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title

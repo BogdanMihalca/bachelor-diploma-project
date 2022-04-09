@@ -14,6 +14,11 @@ module.exports = {
         url:
           process.env.WPGRAPHQL_URL ||
           `https://bachelor.bogdanmihalca.com/graphql`,
+        schema: {
+          perPage: 20, // currently set to 100
+          requestConcurrency: 5, // currently set to 15
+          previewRequestConcurrency: 2, // currently set to 5
+        },
       },
     },
     {

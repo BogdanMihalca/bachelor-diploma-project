@@ -11,9 +11,9 @@ import parse from "html-react-parser"
 // import "../css/@wordpress/block-library/build-style/style.css"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
-import Layout from "../components/Layout/Layout"
-import Seo from "../components/seo"
+import Bio from "../components/common/bio"
+import Layout from "../components/common/Layout/Layout"
+import Seo from "../components/common/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
