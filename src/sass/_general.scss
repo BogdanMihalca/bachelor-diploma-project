@@ -1,0 +1,43 @@
+@use "./breakpoints" as *;
+/*
+62.5% of 16px = 10px
+16px means 100% font-size. (since 16px is the default size)
+1px means 100/16% font-size.
+10px means (100/16) * 10 % → 62.5%
+*/
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: normal;
+  margin-bottom: 2rem;
+  font-family: "HelveticaNeue";
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    color: unset;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media screen and (min-width: $screen-lg) {
+  p {
+    font-size: 1.8rem;
+    margin-bottom: 2.6rem;
+  }
+}
