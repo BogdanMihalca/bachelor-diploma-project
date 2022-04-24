@@ -13,18 +13,15 @@ const chunk = require(`lodash/chunk`)
  */
 exports.createPages = async gatsbyUtilities => {
   // Query our posts from the GraphQL server
-  const posts = await getPosts(gatsbyUtilities)
-
-  // If there are no posts in WordPress, don't do anything
-  if (!posts.length) {
-    return
-  }
-
+  // const posts = await getPosts(gatsbyUtilities)
+  // // If there are no posts in WordPress, don't do anything
+  // if (!posts.length) {
+  //   return
+  // }
   // If there are posts, create pages for them
-  await createIndividualBlogPostPages({ posts, gatsbyUtilities })
-
+  // await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   // And a paginated archive
-  await createBlogPostArchive({ posts, gatsbyUtilities })
+  // await createBlogPostArchive({ posts, gatsbyUtilities })
 }
 
 /**

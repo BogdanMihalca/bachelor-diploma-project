@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
@@ -18,7 +19,7 @@ const BlogIndex = ({
         <Seo title="All posts" />
         <Bio />
         <p>
-          No blog posts found. Add posts to your WordPress site and they'll
+          No blog posts found. Add posts to your WordPress site and they&apos;ll
           appear here!
         </p>
       </Layout>
@@ -33,7 +34,7 @@ const BlogIndex = ({
 
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          const title = post.title
+          const { title } = post
 
           return (
             <li key={post.uri}>
