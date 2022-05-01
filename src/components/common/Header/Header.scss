@@ -1,72 +1,112 @@
-@use "../../../sass/variables"as *;
-@use "../../../sass/breakpoints"as *;
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
 
 .mbc-header {
+  background-color: #27305f;
+  z-index: 99;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 
-    // hamburger menu
-    #nav-hamburger {
-        margin-top: 0.3rem;
-        border: none;
-        appearance: none;
-        background: transparent;
-        min-width: 2.5rem;
-        min-height: 2rem;
-        transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
+  .logo-container {
+    margin-right: 2rem;
+  }
 
-        //hamburger lines
-        span {
-            display: block;
-            position: absolute;
-            height: 0.2rem;
-            width: 100%;
-            background: #000;
-            border-radius: 0.1rem;
-            left: 0;
-            transform: rotate(0deg);
-            transition: 0.3s ease-in-out;
+  .mbc-button {
+    a {
+      color: white !important;
+    }
+    border-radius: 0;
+    padding: 0.5rem !important;
+  }
 
-            &:nth-child(1) {
-                top: 0;
-            }
+  .navbar-collapse {
+    margin-bottom: 2rem;
+    .navbar-nav {
+      padding-right: 5rem;
+      align-items: flex-end;
+    }
+  }
 
-            &:nth-child(2) {
-                top: 0.8rem;
-            }
+  // hamburger menu
+  .navbar-toggler {
+    box-shadow: none;
+    border: none;
+  }
+  #nav-hamburger {
+    margin-top: 0.3rem;
+    border: none;
+    appearance: none;
+    background: transparent;
+    min-width: 2.5rem;
+    min-height: 2rem;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
 
-            &:nth-child(3) {
-                top: 0.8rem;
-            }
+    //hamburger lines
+    span {
+      display: block;
+      position: absolute;
+      height: 0.2rem;
+      width: 100%;
+      background: white;
+      border-radius: 0.1rem;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.3s ease-in-out;
 
-            &:nth-child(4) {
-                top: 1.6rem;
-            }
-        }
+      &:nth-child(1) {
+        top: 0;
+      }
 
-        &.open {
-            span {
-                &:nth-child(1) {
-                    top: 0.8rem;
-                    width: 0%;
-                    left: 50%;
-                }
+      &:nth-child(2) {
+        top: 0.8rem;
+      }
 
-                &:nth-child(2) {
-                    transform: rotate(45deg);
-                }
+      &:nth-child(3) {
+        top: 0.8rem;
+      }
 
-                &:nth-child(3) {
-                    transform: rotate(-45deg);
-                }
-
-                &:nth-child(4) {
-                    top: 0.8rem;
-                    width: 0%;
-                    left: 50%;
-                }
-            }
-        }
+      &:nth-child(4) {
+        top: 1.6rem;
+      }
     }
 
+    &.open {
+      span {
+        &:nth-child(1) {
+          top: 0.8rem;
+          width: 0%;
+          left: 50%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          top: 0.8rem;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    background-color: transparent;
+    .mbc-button {
+      a {
+        color: white !important;
+      }
+      border-radius: 2.5rem;
+      padding: 1rem 2rem !important;
+    }
+  }
 }

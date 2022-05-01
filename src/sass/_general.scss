@@ -13,13 +13,14 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 p {
   font-size: 1.5rem;
   line-height: normal;
   margin-bottom: 2rem;
-  font-family: "HelveticaNeue";
+  font-family: "Roboto";
 }
 
 a {
@@ -30,9 +31,9 @@ a {
     color: unset;
   }
 }
-
-.text-center {
-  text-align: center;
+.container {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 @media screen and (min-width: $screen-lg) {

@@ -6,10 +6,29 @@ export const useHeaderLogo = () => {
       wp {
         acfOptionsOptions {
           optionsFields {
-            websiteLogo {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(formats: WEBP, placeholder: NONE, width: 200)
+            generalSettings {
+              logo {
+                logoOnDark {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        formats: WEBP
+                        placeholder: NONE
+                        width: 200
+                      )
+                    }
+                  }
+                }
+                logoOnWhite {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        formats: WEBP
+                        placeholder: NONE
+                        width: 200
+                      )
+                    }
+                  }
                 }
               }
             }
@@ -19,5 +38,5 @@ export const useHeaderLogo = () => {
     }
   `)
 
-  return data.wp.acfOptionsOptions.optionsFields.websiteLogo
+  return data.wp.acfOptionsOptions.optionsFields.generalSettings.logo
 }

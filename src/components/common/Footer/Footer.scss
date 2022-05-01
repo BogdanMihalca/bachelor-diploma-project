@@ -1,0 +1,18 @@
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
+
+.mbc-footer {
+  .top-footer-border {
+    height: 3rem;
+    background-color: $violet;
+  }
+  background-color: $blue;
+  color: white;
+  min-height: 15rem;
+
+  .copyright {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}

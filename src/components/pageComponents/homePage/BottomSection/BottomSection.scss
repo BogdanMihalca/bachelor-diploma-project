@@ -1,0 +1,44 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-bottom-section {
+  padding: 10rem 0;
+
+  .tablet-frame {
+    margin: 3rem;
+    background-image: url("../../../../assets/images/png/tablet_frame.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    .inner-image {
+      margin: 3rem;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  .right-side {
+    h2 {
+      font-family: "Roboto";
+      font-size: 3.6rem;
+      font-weight: 700;
+      margin-bottom: 5rem;
+    }
+    .copy {
+      font-weight: 500;
+      color: gray;
+    }
+    .mbc-button {
+      border-radius: 25rem;
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    padding: 15rem 0;
+    .right-side {
+      padding: 2rem;
+      h2 {
+        margin-top: 5rem;
+      }
+    }
+  }
+}

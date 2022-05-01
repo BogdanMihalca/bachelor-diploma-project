@@ -1,5 +1,6 @@
 import React from "react"
 import propTypes from "prop-types"
+import "./Layout.scss"
 import "../../../sass/style.scss"
 
 const Layout = ({ children, classes }) => {

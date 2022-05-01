@@ -1,0 +1,99 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.homepage-top-section {
+  position: relative;
+  .top-image {
+    max-width: 40rem;
+    text-align: right;
+    display: block;
+    margin-left: auto;
+  }
+
+  .top-slider {
+    .slick-dots {
+      bottom: auto;
+      top: -8rem;
+      text-align: left;
+      li {
+        width: auto;
+        margin: -0.5rem;
+
+        &.slick-active {
+          margin: 1rem;
+          .dot {
+            .slide-active-title {
+              display: inline-block;
+              position: relative;
+              padding-left: 4rem;
+              padding-right: 2rem;
+              margin-left: -3rem;
+              background-color: #fff;
+              z-index: 98;
+              border-radius: 5rem;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+          }
+        }
+        .dot {
+          font-size: 3rem;
+          color: $orange;
+          .slide-index {
+            z-index: 99;
+            display: inline-block;
+            position: relative;
+            width: 4.5rem;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $green;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          }
+
+          .slide-active-title {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .featured-post-slide {
+      padding: 1rem;
+      h2 {
+        font-size: 3.6rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+      .featured-post-excerpt p {
+        font-size: 2.4rem;
+      }
+      .featured-post-read-more {
+        a {
+          font-size: 2rem;
+          font-weight: 600;
+          letter-spacing: 0.2rem;
+        }
+        border-radius: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    .top-image {
+      position: absolute;
+      top: -15rem;
+      right: 0;
+      max-width: 60%;
+      max-height: 90vh;
+    }
+    .top-slider {
+      margin-top: 17rem;
+      max-width: 80%;
+    }
+  }
+
+  @media screen and (min-width: $screen-xxl) {
+    .top-image {
+      max-height: 110vh;
+    }
+  }
+}

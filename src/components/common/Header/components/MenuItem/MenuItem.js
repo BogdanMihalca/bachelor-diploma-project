@@ -5,13 +5,20 @@ import { Nav, NavDropdown } from "react-bootstrap"
 import MbcLink from "../../../MbcLink/MbcLink"
 import "./MenuItem.scss"
 
-const MenuItem = ({ menuItem, location }) => {
+const MenuItem = ({ menuItem, location, className, component }) => {
   const hasSubMenu = menuItem.subItems.length !== 0
 
   return hasSubMenu ? (
-    <NavDropdown title={menuItem.label} className="mbc-menu-item">
+    <NavDropdown
+      title={menuItem.label}
+      className={`mbc-menu-item ${className}`}
+    >
       {menuItem.subItems.map(subItem => (
-        <NavDropdown.Item as="li" className="mbc-menu-item" key={subItem.id}>
+        <NavDropdown.Item
+          as={component}
+          className="mbc-menu-item"
+          key={subItem.id}
+        >
           <MbcLink
             link={{
               url: subItem.url,
@@ -25,10 +32,10 @@ const MenuItem = ({ menuItem, location }) => {
       ))}
     </NavDropdown>
   ) : (
-    <Nav.Link as="li" className="mbc-menu-item">
+    <Nav.Link as={component} className={`mbc-menu-item ${className}`}>
       <MbcLink
         link={{
-          url: hasSubMenu ? "#" : menuItem.url,
+          url: menuItem.url,
           target: menuItem.target ? menuItem.target : "",
         }}
         prevLink={location?.pathname}
@@ -41,6 +48,8 @@ const MenuItem = ({ menuItem, location }) => {
 
 MenuItem.defaultProps = {
   location: {},
+  className: "",
+  component: "li",
 }
 
 MenuItem.propTypes = {
@@ -52,6 +61,8 @@ MenuItem.propTypes = {
     subItems: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   location: PropTypes.shape({ pathname: PropTypes.string }),
+  className: PropTypes.string,
+  component: PropTypes.any,
 }
 
 export default MenuItem

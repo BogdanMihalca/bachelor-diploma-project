@@ -1,0 +1,35 @@
+@use "../../../sass/variables"as *;
+@use "../../../sass/breakpoints"as *;
+
+.mbc-button{
+    border-radius: 2.5rem;
+    padding: 1rem 2rem!important;
+    font-size: 1.4rem!important;
+    font-weight: bold;
+    border: none;
+
+    &.primary{
+        background-color: $green;
+        color:#fff!important;
+        &:hover {
+            box-shadow: 0 6px 12px 0 #20E1C9;
+            cursor: pointer;
+        }
+        &:disabled {
+            background-color: rgba(0, 0, 0, 0.15);
+            &:hover {
+              box-shadow: none;
+              cursor: not-allowed;
+            }
+          }
+    }
+
+    &.button-text{
+        background:none;
+        border:none;
+        margin:0;
+        padding:0;
+        cursor: pointer;
+    }
+  
+}

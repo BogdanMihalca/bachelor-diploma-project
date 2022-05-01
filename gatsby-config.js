@@ -59,5 +59,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",
+    "gatsby-plugin-breakpoints",
   ],
 }
