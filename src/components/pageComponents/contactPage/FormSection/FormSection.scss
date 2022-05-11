@@ -1,0 +1,95 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-contact-form {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  .contact-form-card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 3rem;
+    overflow: hidden;
+    text-align: center;
+    .img-col {
+      background-color: #d8ddf6;
+      .socials-wrapper {
+        padding: 2rem 0;
+        .social-button {
+          width: 7rem !important;
+          height: 7rem !important;
+          margin: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #0a315a;
+          border-radius: 50%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          color: white;
+          svg {
+            width: 3rem;
+            height: 3rem;
+          }
+          &:hover {
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+          }
+        }
+      }
+    }
+    .form-col {
+      padding: 2rem;
+      h2 {
+        margin: 1rem 0;
+        border-bottom: 4px solid $violet;
+      }
+      .contact-panel-form {
+        text-align: left;
+        .contact-panel-input {
+          margin: 3rem 0;
+          &:first-of-type {
+            margin-top: 5rem;
+          }
+          input,
+          textarea {
+            display: block;
+            font-size: 2.4rem;
+            padding: 0.5rem;
+            padding-left: 1rem;
+            background-color: #e6e9f9;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+              rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            width: 100%;
+            border: none;
+          }
+          .form-label {
+            font-size: 2.4rem;
+            padding-left: 1rem;
+            color: $grayDarker;
+          }
+        }
+        .mbc-button {
+          display: block;
+          width: 50%;
+          margin: 2rem auto;
+          font-size: 2rem !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    .contact-form-card {
+      .form-col {
+        padding: 6rem;
+      }
+    }
+  }
+  @media screen and (min-width: $screen-xxl) {
+    .contact-form-card {
+      .form-col {
+        padding: 10rem;
+      }
+    }
+  }
+}

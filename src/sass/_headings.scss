@@ -4,8 +4,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat";
+  font-family: "Roboto";
   line-height: normal;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 4.6rem;
+}
+h2 {
+  font-size: 3.8rem;
+}
+h3 {
+  font-size: 3.6rem;
+}
+h4 {
+  font-size: 3.4em;
+}
+h5 {
+  font-size: 3.2rem;
 }
 
 // this seems weird but we'll go with it for the moment

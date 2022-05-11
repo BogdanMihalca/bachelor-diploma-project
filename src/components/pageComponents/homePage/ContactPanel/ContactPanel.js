@@ -4,11 +4,10 @@ import { Col, Container, Row } from "react-bootstrap"
 import parse from "html-react-parser"
 
 import { VARIANT_EMAIL } from "../../../../constants"
+import { useContactPanel } from "../../../../hooks/pageHooks/homePage/useContactPanel"
 import MbcInput from "../../../common/MbcInput/MbcInput"
 import MbcButton from "../../../common/MbcButton/MbcButton"
-
 import "./ContactPanel.scss"
-import { useContactPanel } from "../../../../hooks/pageHooks/homePage/useContactPanel"
 
 const ContactPanel = () => {
   const { panelHeading, copy } = useContactPanel()

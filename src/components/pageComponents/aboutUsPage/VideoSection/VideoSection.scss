@@ -1,0 +1,23 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-video-section {
+  margin: 5rem 0;
+  h2 {
+    color: $blue;
+    margin-bottom: 2rem;
+  }
+  .mbc-content {
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    margin: 15rem 0;
+    .d-flex {
+      padding-left: 5rem;
+    }
+  }
+}

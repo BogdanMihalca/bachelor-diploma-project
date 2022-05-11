@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://localhost:8000/",
+    siteUrl: "https://bachelor.bogdanmihalca.com/",
     title: "Bachelor project Website",
   },
   plugins: [

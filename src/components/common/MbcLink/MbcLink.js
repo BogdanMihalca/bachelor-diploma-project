@@ -10,7 +10,11 @@ const MbcLink = ({ link, children, className, prevLink }) => {
   }
   if (!link || !link.url) return innerChild()
 
-  if (link.url?.includes("http"))
+  if (
+    link.url?.includes("http") ||
+    link.url?.includes("mailto:") ||
+    link.url?.includes("tel:")
+  )
     return (
       <a
         href={link.url}

@@ -1,0 +1,24 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-contact-map-section {
+  width: 100%;
+  position: relative;
+  border-top: 0.7rem solid $orange;
+  .resizable-handle {
+    width: 15rem;
+    background-color: white;
+    position: absolute;
+    top: -2.5rem;
+    left: calc(50% - 7.5rem);
+    border-radius: 2.5rem;
+    border: 0.3rem solid $orange;
+    overflow: hidden;
+    span {
+      display: block;
+      background-color: $orange;
+      height: 0.2rem;
+      margin: 0.5rem 0;
+    }
+  }
+}

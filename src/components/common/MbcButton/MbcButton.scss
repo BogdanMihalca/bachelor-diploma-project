@@ -1,35 +1,82 @@
-@use "../../../sass/variables"as *;
-@use "../../../sass/breakpoints"as *;
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
 
-.mbc-button{
-    border-radius: 2.5rem;
-    padding: 1rem 2rem!important;
-    font-size: 1.4rem!important;
-    font-weight: bold;
+.mbc-button {
+  border-radius: 2.5rem;
+  padding: 1rem 2rem !important;
+  font-size: 1.4rem !important;
+  font-weight: bold;
+  border: none;
+
+  &.primary {
+    background-color: $green;
+    color: #fff !important;
+    &:hover {
+      box-shadow: 0 6px 12px 0 #20e1c9;
+      cursor: pointer;
+    }
+    &:disabled {
+      background-color: rgba(0, 0, 0, 0.15);
+      &:hover {
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &.button-text {
+    background: none;
     border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
 
-    &.primary{
-        background-color: $green;
-        color:#fff!important;
-        &:hover {
-            box-shadow: 0 6px 12px 0 #20E1C9;
-            cursor: pointer;
-        }
-        &:disabled {
-            background-color: rgba(0, 0, 0, 0.15);
-            &:hover {
-              box-shadow: none;
-              cursor: not-allowed;
-            }
-          }
-    }
+  &.button-icon-play {
+    width: 7rem;
+    height: 7rem;
+    background-color: $green;
+    border-radius: 50%;
+    animation: grow 1s infinite;
 
-    &.button-text{
-        background:none;
-        border:none;
-        margin:0;
-        padding:0;
-        cursor: pointer;
+    .play-icon {
+      margin: 0 auto;
+      position: relative;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 1.5rem 0 1.5rem 3rem;
+      border-color: transparent transparent transparent white;
+      opacity: 0.75;
     }
-  
+    @media screen and (min-width: $screen-lg) {
+      width: 10rem;
+      height: 10rem;
+      .play-icon {
+        border-width: 2rem 0 2rem 4rem;
+        left: 0.5rem;
+      }
+    }
+  }
+}
+.mbc-play-line {
+  display: inline-block;
+  width: 7rem;
+  height: 0.5rem;
+  background-color: $grayDark;
+  margin: 0 3rem;
+}
+.mbc-play-text {
+  color: $grayDark;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+
+@keyframes grow {
+  from {
+    box-shadow: 0px 0px 1em $red;
+  }
+  to {
+    box-shadow: 0px 0px 3em $red;
+  }
 }

@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useHomepageTopSection = () => {
+export const useTopSection = () => {
   const data = useStaticQuery(graphql`
     {
       wpPage(isFrontPage: { eq: true }) {

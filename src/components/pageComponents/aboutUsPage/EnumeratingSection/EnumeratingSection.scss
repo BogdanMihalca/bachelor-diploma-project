@@ -1,0 +1,50 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-enumerating-section {
+  margin: 5rem 0;
+  h2 {
+    color: $blue;
+    margin-bottom: 2rem;
+  }
+  .mbc-content {
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+  .enumerating-item {
+    margin: 2rem 0.5rem;
+    .enumerating-circle {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      color: white;
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 2rem;
+      & span {
+        position: relative;
+        left: 1.7rem;
+        top: 1.4rem;
+        font-size: 3rem;
+      }
+    }
+    h5 {
+      font-size: 1.8rem;
+      color: $grayDarker;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.6rem;
+      color: $grayDarker;
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $screen-lg) {
+    margin: 20rem 0;
+    .flex-column {
+      padding-left: 5rem;
+    }
+  }
+}

@@ -4,17 +4,17 @@ import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Col, Container, Row } from "react-bootstrap"
 
-import { useHomepageTopSection } from "../../../../hooks/pageHooks/homePage/useHomePageTopSection"
+import { useTopSection } from "../../../../hooks/pageHooks/homePage/useTopSection"
+import MbcButton from "../../../common/MbcButton/MbcButton"
+import MbcLink from "../../../common/MbcLink/MbcLink"
 
 // Import css files
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./TopSection.scss"
-import MbcButton from "../../../common/MbcButton/MbcButton"
-import MbcLink from "../../../common/MbcLink/MbcLink"
 
 const TopSection = () => {
-  const { headerImage, postsCarousel } = useHomepageTopSection()
+  const { headerImage, postsCarousel } = useTopSection()
 
   const sliderSettings = {
     dots: true,

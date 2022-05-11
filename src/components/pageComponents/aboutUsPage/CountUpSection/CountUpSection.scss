@@ -1,0 +1,60 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-count-up-section {
+  margin-top: 5rem;
+  padding: 3rem 0 6rem;
+  background-color: #e0e4f7;
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  .mbc-count-up-item {
+    background-color: white;
+    margin: 3rem;
+    text-align: center;
+    border-radius: 5rem;
+    padding: 4rem;
+    padding-bottom: 4rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    .color-bg {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 10rem;
+      width: 10rem;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      border-radius: 2rem;
+    }
+    h6 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $screen-lg) {
+    margin-top: 15rem;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    h2 {
+      text-align: center;
+      max-width: 60%;
+      margin: 0 auto 7rem auto;
+    }
+    .mbc-count-up-item {
+      padding: 6rem;
+      .color-bg {
+        height: 15rem;
+        width: 15rem;
+        font-size: 5rem;
+        border-radius: 4rem;
+      }
+      h6 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

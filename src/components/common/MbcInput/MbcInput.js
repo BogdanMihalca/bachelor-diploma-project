@@ -28,8 +28,38 @@ const MbcInput = ({
   className,
   ...custom
 }) => {
+  const handleKeyDown = e => {
+    e.target.style.height = "inherit"
+    e.target.style.height = `${e.target.scrollHeight + 10}px`
+    // In case you have a limitation
+    // e.target.style.height = `${Math.min(e.target.scrollHeight, limit)}px`;
+  }
+
   const getInputVariant = () => {
     //   TODO: the rest of the input components
+    if (variant === VARIANT_TEXTAREA)
+      return (
+        <FormGroup>
+          {label && <FormLabel>{label}</FormLabel>}
+          <textarea
+            {...field} // eslint-disable-line react/jsx-props-no-spreading
+            aria-invalid={touched[field.name] && !!errors[field.name]}
+            id={id}
+            className={`${variant}-input`}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...custom}
+            rows={5}
+            value={field.value || ""}
+            onKeyDown={handleKeyDown}
+          />
+          {touched[field.name] && errors[field.name] ? (
+            <FormControl.Feedback type="invalid">
+              {errors[field.name]}
+            </FormControl.Feedback>
+          ) : null}
+        </FormGroup>
+      )
+
     return (
       <FormGroup>
         {label && <FormLabel>{label}</FormLabel>}

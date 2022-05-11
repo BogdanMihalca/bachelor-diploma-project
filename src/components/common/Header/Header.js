@@ -11,6 +11,7 @@ import { useHeaderLogo } from "../../../hooks/common/Header/useHeaderLogo"
 import MenuItem from "./components/MenuItem/MenuItem"
 import "./Header.scss"
 import MbcButton from "../MbcButton/MbcButton"
+import MbcLink from "../MbcLink/MbcLink"
 
 const Header = ({ location }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -29,11 +30,13 @@ const Header = ({ location }) => {
       <Container>
         <Navbar.Brand>
           <div className="logo-container">
-            <GatsbyImage
-              className="header-logo"
-              alt="logo"
-              image={breakpoints.md ? logoOnDarkData : logoOnWhiteData}
-            />
+            <MbcLink link={{ url: "/" }}>
+              <GatsbyImage
+                className="header-logo"
+                alt="logo"
+                image={breakpoints.md ? logoOnDarkData : logoOnWhiteData}
+              />
+            </MbcLink>
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="collapsable-nav">
