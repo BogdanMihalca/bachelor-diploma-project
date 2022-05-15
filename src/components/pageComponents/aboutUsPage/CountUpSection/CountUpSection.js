@@ -25,18 +25,18 @@ const CountUpSection = () => {
                       backgroundColor: item.color,
                     }}
                   >
-                    <CountUp
-                      end={Number(item.value)}
-                      duration={2.75}
-                      useEasing
-                      redraw
-                    >
-                      {({ countUpRef, start }) => (
-                        <VisibilitySensor onChange={start} delayedCall>
-                          <span ref={countUpRef} />
-                        </VisibilitySensor>
-                      )}
-                    </CountUp>
+                    <VisibilitySensor partialVisibility>
+                      {({ isVisible }) =>
+                        isVisible && (
+                          <CountUp
+                            end={Number(item.value)}
+                            duration={2.75}
+                            useEasing
+                            redraw
+                          />
+                        )
+                      }
+                    </VisibilitySensor>
                   </div>
                   <h6>{item.label}</h6>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col } from "react-bootstrap"
 import ModalVideo from "react-modal-video"
@@ -14,6 +14,12 @@ const VideoSection = () => {
   const [isOpen, setOpen] = useState(false)
   const { heading, copy, image, video } = useVideoSection()
 
+  const [isModalAvailable, setIsModalAvailable] = useState(false)
+
+  useEffect(() => {
+    setIsModalAvailable(true)
+  }, [])
+
   return (
     <Container>
       <Row className="mbc-video-section">
@@ -27,13 +33,15 @@ const VideoSection = () => {
           {heading && <h2>{heading}</h2>}
           <ContentBox content={copy} />
           <MbcButton variant="button-icon-play" onClick={() => setOpen(true)} />
-          <ModalVideo
-            channel="youtube"
-            autoplay
-            isOpen={isOpen}
-            videoId={getYoutubeVideoId(video)}
-            onClose={() => setOpen(false)}
-          />
+          {isModalAvailable && (
+            <ModalVideo
+              channel="youtube"
+              autoplay
+              isOpen={isOpen}
+              videoId={getYoutubeVideoId(video)}
+              onClose={() => setOpen(false)}
+            />
+          )}
         </Col>
       </Row>
     </Container>
