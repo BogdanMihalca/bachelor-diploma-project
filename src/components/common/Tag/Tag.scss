@@ -1,0 +1,23 @@
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
+
+.mbc-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 0.1rem 1rem;
+  border-radius: 2rem;
+  color: $blue;
+  border: 0.4rem solid $blue;
+  margin: 1rem 0.5rem;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-color: $red;
+    color: $red;
+  }
+}

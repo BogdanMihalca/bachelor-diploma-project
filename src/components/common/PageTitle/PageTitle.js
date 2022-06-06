@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 
 import "./PageTitle.scss"
 
-const PageTitle = ({ title }) => {
+const PageTitle = ({ title, noArrow }) => {
   return (
     <div className="mbc-page-title">
       {title && (
         <div className="wrapper">
-          <div className="arrow" />
+          {!noArrow && <div className="arrow" />}
           <h1>{title} </h1>
         </div>
       )}
@@ -18,9 +18,11 @@ const PageTitle = ({ title }) => {
 
 PageTitle.defaultProps = {
   title: "",
+  noArrow: false,
 }
 PageTitle.propTypes = {
   title: PropTypes.string,
+  noArrow: PropTypes.bool,
 }
 
 export default PageTitle

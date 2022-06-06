@@ -1,0 +1,77 @@
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
+
+.mbc-featured-article {
+  border-radius: 2.5rem;
+  overflow: hidden;
+  margin: 4rem 0;
+  transition: all 0.1s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  header {
+    position: relative;
+
+    .featured-image {
+      min-height: 25rem;
+    }
+    .tag {
+      position: absolute;
+      top: 3rem;
+      right: 0;
+      padding: 1rem;
+      background: $blue;
+      color: white;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  main {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.9) 80%,
+      rgba(255, 255, 255, 0.1) 95%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    padding-top: 3rem;
+    margin-top: -6rem;
+    position: relative;
+    z-index: 5;
+    h4 {
+      font-size: 2rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+      color: $blue;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+  footer,
+  main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .post-meta {
+    border-top: 3px solid $violet;
+    color: $grayDarker;
+  }
+  footer {
+    font-size: 1.6rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .read-post {
+      color: $green;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: $red;
+        text-decoration: underline;
+      }
+    }
+  }
+}

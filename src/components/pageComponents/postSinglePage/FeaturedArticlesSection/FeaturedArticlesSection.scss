@@ -1,0 +1,31 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.single-post-featured-articles {
+  margin-bottom: 5rem;
+  h2 {
+    border-top: 0.4rem solid $violet;
+    margin-top: 5rem;
+    color: $blue;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .mbc-featured-article {
+      max-width: 35rem;
+      margin: 2rem 3rem;
+    }
+  }
+  @media screen and (min-width: $screen-md) {
+    margin-bottom: 10rem;
+    h2 {
+      max-width: 40%;
+      margin: 10rem auto 5rem;
+      border-top-width: 0.6rem;
+    }
+  }
+}

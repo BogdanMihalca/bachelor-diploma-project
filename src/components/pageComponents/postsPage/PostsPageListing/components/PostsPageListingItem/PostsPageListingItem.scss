@@ -1,0 +1,83 @@
+@use "../../../../../../sass/variables" as *;
+@use "../../../../../../sass/breakpoints" as *;
+
+.mbc-post-list-item {
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  margin: 2rem 0;
+  transition: all 0.1s ease-in-out;
+  header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $blue;
+    &:hover {
+      color: $red;
+    }
+  }
+  .post-excerpt {
+    p {
+      font-size: 1.6rem;
+      color: $grayDarker;
+    }
+  }
+  .featured-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .featured-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .post-meta {
+      border-top: 2px solid $violet;
+      padding-top: 1rem;
+      font-size: 1.4rem;
+      color: $grayDark;
+    }
+    .read-post {
+      color: $green;
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: $red;
+        text-decoration: underline;
+      }
+    }
+  }
+  @media screen and (min-width: $screen-md) {
+    padding: 3rem;
+    header h2 {
+      font-size: 2.4rem;
+    }
+    .post-excerpt {
+      font-size: 1.8rem;
+      margin-right: 3rem;
+    }
+    .featured-image {
+      border-radius: 2.5rem;
+    }
+    footer {
+      .post-meta {
+        font-size: 1.6rem;
+      }
+      .read-post {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}

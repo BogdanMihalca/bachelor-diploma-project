@@ -1,0 +1,13 @@
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
+
+.input-wrapper {
+  .invalid-feedback {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+    color: #ff445d;
+    font-style: italic;
+    text-align: right;
+  }
+}

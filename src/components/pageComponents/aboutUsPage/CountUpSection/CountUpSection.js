@@ -1,5 +1,5 @@
-import { uniqueId } from "lodash"
 import React from "react"
+import { uniqueId } from "lodash"
 import { Col, Container, Row } from "react-bootstrap"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
@@ -9,6 +9,11 @@ import "./CountUpSection.scss"
 
 const CountUpSection = () => {
   const { heading, items } = useCountUpSection()
+  const [isRendered, setIsRendered] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsRendered(true)
+  }, [])
 
   return (
     <div className="mbc-count-up-section">
@@ -25,18 +30,18 @@ const CountUpSection = () => {
                       backgroundColor: item.color,
                     }}
                   >
-                    <VisibilitySensor partialVisibility>
-                      {({ isVisible }) =>
-                        isVisible && (
+                    {isRendered && (
+                      <VisibilitySensor partialVisibility>
+                        {() => (
                           <CountUp
                             end={Number(item.value)}
                             duration={2.75}
                             useEasing
                             redraw
                           />
-                        )
-                      }
-                    </VisibilitySensor>
+                        )}
+                      </VisibilitySensor>
+                    )}
                   </div>
                   <h6>{item.label}</h6>
                 </div>

@@ -1,0 +1,132 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.login-card {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  background-color: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .login-image-container {
+    display: none;
+  }
+
+  .login-container {
+    padding: 5rem 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    h1 {
+      color: $blue;
+      text-align: center;
+    }
+    .nav-tabs {
+      margin-top: 2rem;
+      justify-content: center;
+      font-size: 2rem;
+      border: none;
+      .nav-item button {
+        border: none;
+      }
+      .nav-item button:hover,
+      .nav-item .active {
+        font-weight: 700;
+        color: $blue;
+        border: none;
+        border-bottom: 2px solid $green;
+      }
+    }
+    .login-form {
+      margin-top: 2rem;
+      form {
+        padding: 2rem;
+        @media screen and (min-width: $screen-lg) {
+          padding: 2rem 5rem;
+        }
+
+        .login-panel-input {
+          label {
+            font-size: 1.8rem;
+            color: $grayDarker;
+          }
+          input {
+            border-radius: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            color: $orange;
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+              rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          }
+        }
+        .mbc-button {
+          width: 90%;
+          display: block;
+          margin: 3rem auto 2rem;
+          @media screen and (min-width: $screen-lg) {
+            width: 60%;
+          }
+        }
+      }
+    }
+    .text-form-bottom {
+      text-align: center;
+      color: $grayDarker;
+    }
+    .register-btn-link {
+      padding: 0 !important;
+      margin-left: 1rem;
+      color: $red;
+      font-weight: 800;
+      font-size: 1.5rem !important;
+      &:hover {
+        color: $green;
+      }
+    }
+    .social-buttons {
+      text-align: center;
+      .fb-login,
+      .google-login {
+        margin: 1rem auto;
+        border: 1px solid $grayDarker;
+        border-radius: 3rem;
+        font-size: 1.8rem !important;
+        padding: 0.5rem 3rem !important;
+        text-align: center;
+        img {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 1rem;
+        }
+        &:hover {
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+            rgba(17, 17, 26, 0.1) 0px 16px 56px,
+            rgba(17, 17, 26, 0.1) 0px 24px 80px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    .login-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eef1ff;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .login-container {
+      h1 {
+        font-size: 3.2rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

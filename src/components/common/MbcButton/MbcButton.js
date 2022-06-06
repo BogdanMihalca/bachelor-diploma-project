@@ -46,6 +46,7 @@ MbcButton.defaultProps = {
   className: "",
   variant: "primary",
   bootstrapVariant: null,
+  children: null,
 }
 
 MbcButton.propTypes = {
@@ -65,7 +66,7 @@ MbcButton.propTypes = {
     "link",
   ]),
   onClick: PropTypes.func,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   type: PropTypes.string,
   disabled: PropTypes.bool,
   className: PropTypes.string,

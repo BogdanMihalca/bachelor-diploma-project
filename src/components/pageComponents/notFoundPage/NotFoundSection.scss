@@ -1,0 +1,38 @@
+@use "../../../sass/variables" as *;
+@use "../../../sass/breakpoints" as *;
+
+.not-found-section {
+  margin-top: 5rem;
+  .mbc-not-found-title {
+    display: flex;
+    align-items: baseline;
+    img {
+      padding-bottom: 2rem;
+      margin-right: -1.5rem;
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: 300;
+      letter-spacing: 0.2rem;
+      color: $blue;
+    }
+  }
+  .mbc-content {
+    margin-top: 3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+    margin-bottom: 5rem;
+  }
+  .mbc-button {
+    margin-bottom: 5rem;
+  }
+  @media screen and (min-width: $screen-md) {
+    margin-top: 10rem;
+    .mbc-content {
+      width: 80%;
+    }
+    .mbc-not-found-title {
+      margin-top: 5rem;
+    }
+  }
+}

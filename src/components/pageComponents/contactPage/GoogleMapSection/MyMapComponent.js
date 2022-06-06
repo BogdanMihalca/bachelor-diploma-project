@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api"
 
 const MyMapComponent = ({ lat, lng }) => {
   const containerStyle = {
@@ -8,8 +8,13 @@ const MyMapComponent = ({ lat, lng }) => {
     height: "100%",
   }
 
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+  })
+
   return (
-    <LoadScript googleMapsApiKey={process.env.GOOGLE_MAPS_API_KEY}>
+    isLoaded && (
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{ lat, lng }}
@@ -17,7 +22,7 @@ const MyMapComponent = ({ lat, lng }) => {
       >
         <Marker position={{ lat, lng }} />
       </GoogleMap>
-    </LoadScript>
+    )
   )
 }
 

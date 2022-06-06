@@ -1,0 +1,90 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.posts-page-top-section {
+  position: relative;
+  margin-top: 2rem;
+  .top-image {
+    text-align: right;
+    display: block;
+    margin-left: auto;
+    width: 100%;
+  }
+  .mbc-page-title {
+    margin: 2rem 0;
+  }
+  .category-select {
+    display: inline-block;
+    min-width: 25rem;
+
+    .mbc__control {
+      background-color: $orange;
+      color: white;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.8rem;
+      padding: 1rem;
+
+      :focus {
+        border-radius: 8px;
+        box-shadow: 0 2px 7px 0 $gray !important;
+        border: none;
+      }
+      .mbc__indicator-separator {
+        color: white;
+      }
+      .mbc__indicator {
+        svg {
+          color: white;
+        }
+      }
+
+      &:hover:not(:focus) {
+        box-shadow: 0 0.2rem 0.7rem 0 $gray;
+        cursor: pointer;
+      }
+    }
+    .mbc__value-container {
+      display: flex;
+    }
+
+    .mbc__placeholder,
+    .mbc__single-value {
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .mbc__menu {
+      background-color: $orange;
+      color: white;
+      border: none;
+      font-size: 1.6rem;
+      overflow-x: hidden !important;
+      .mbc__option {
+        padding-left: 2rem;
+      }
+      .mbc__group-heading {
+        color: $red;
+        font-weight: 900;
+      }
+      .mbc__option--is-selected,
+      .mbc__option--is-focused {
+        background-color: $violet !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    .top-image {
+      img {
+        object-fit: contain !important;
+        object-position: right;
+      }
+    }
+    .mbc-page-title {
+      margin: 20rem 0 5rem;
+    }
+  }
+}

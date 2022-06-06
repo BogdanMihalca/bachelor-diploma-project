@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
-import "./MbcInput.scss"
 import {
   VARIANT_CHECKBOX,
   VARIANT_EMAIL,
@@ -14,6 +13,7 @@ import {
   VARIANT_TEXT,
   VARIANT_TEXTAREA,
 } from "../../../constants"
+import "./MbcInput.scss"
 
 const MbcInput = ({
   form: { touched, errors, handleBlur, handleChange },

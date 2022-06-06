@@ -26,7 +26,7 @@ export const useHeaderMenu = () => {
         menuItems {
           nodes {
             id
-            url
+            url: path
             title
             label
             target

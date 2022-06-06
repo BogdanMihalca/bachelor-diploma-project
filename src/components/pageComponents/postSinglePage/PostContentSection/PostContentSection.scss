@@ -1,0 +1,15 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-post-content {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 3rem;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 3rem 1rem;
+
+  @media screen and (min-width: $screen-md) {
+    padding: 5rem;
+    margin-top: 5rem;
+  }
+}

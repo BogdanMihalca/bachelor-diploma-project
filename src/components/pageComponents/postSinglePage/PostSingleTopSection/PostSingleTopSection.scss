@@ -1,0 +1,107 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.post-single-top-section {
+  .featured-image-container {
+    position: relative;
+    margin-top: 3rem;
+    .featured-image {
+      object-fit: cover;
+      height: 30rem;
+      width: 100%;
+    }
+    .featured-mask {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30rem;
+    }
+  }
+  .post-title {
+    font-size: 2.4rem;
+    color: $blue;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .tags {
+    border-bottom: 0.4rem solid $violet;
+    padding: 0 2rem 1rem 0;
+    display: inline-block;
+    margin-top: 2rem;
+    .tag {
+      color: white;
+      border-radius: 2rem;
+      font-size: 1.6rem;
+      background-color: $orange;
+      margin: 1rem 0.5rem;
+      padding: 0.5rem 1rem;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+    }
+  }
+  .categories {
+    color: $red;
+    font-size: 1.6rem;
+    font-style: italic;
+    span {
+      font-weight: 800;
+    }
+    .category {
+      font-weight: 400;
+      &:hover {
+        color: $violet;
+      }
+    }
+  }
+  .post-author,
+  .post-date {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 400;
+    color: $blue;
+    span {
+      font-weight: 800;
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .featured-image-container {
+      .featured-image {
+        height: 40rem;
+      }
+      .featured-mask {
+        height: 40rem;
+      }
+    }
+    .mbc-back-button {
+      margin-top: 5rem;
+    }
+    .post-title {
+      font-size: 3.4rem;
+      margin-top: 7rem;
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    .featured-image-container {
+      .featured-image {
+        height: 50rem;
+      }
+      .featured-mask {
+        height: 50rem;
+      }
+    }
+    .post-author,
+    .post-date,
+    .category,
+    .categories {
+      font-size: 2rem;
+    }
+  }
+}

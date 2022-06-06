@@ -20,5 +20,10 @@
       height: 0.2rem;
       margin: 0.5rem 0;
     }
+    cursor: n-resize;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
   }
 }
