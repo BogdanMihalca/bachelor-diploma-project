@@ -4,7 +4,6 @@ import { graphql, navigate } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
 
 import Layout from "../components/common/Layout/Layout"
-import Seo from "../components/common/seo"
 import Header from "../components/common/Header/Header"
 import PostsPageListing from "../components/pageComponents/postsPage/PostsPageListing/PostPageListing"
 import Footer from "../components/common/Footer/Footer"
@@ -28,7 +27,6 @@ const PostArchiveTags = ({
 
   return (
     <Layout isHomePage>
-      <Seo title="All posts" />
       <Header />
       <PostsPageTopSection title={`Eticheta: ${tagName}`} hasBackButton />
       <Container>

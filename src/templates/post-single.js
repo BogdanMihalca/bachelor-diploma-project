@@ -3,7 +3,6 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/common/Layout/Layout"
-import Seo from "../components/common/seo"
 import Header from "../components/common/Header/Header"
 import PostSingleTopSection from "../components/pageComponents/postSinglePage/PostSingleTopSection/PostSingleTopSection"
 import PostContentSection from "../components/pageComponents/postSinglePage/PostContentSection/PostContentSection"
@@ -13,7 +12,6 @@ import FeaturedArticlesSection from "../components/pageComponents/postSinglePage
 const BlogPostTemplate = ({ data: { post } }) => {
   return (
     <Layout classes="background-home ">
-      <Seo title={post.title} description={post.excerpt} />
       <Header />
       <PostSingleTopSection
         featuredImage={post.featuredImage?.node}
@@ -46,11 +44,7 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                quality: 100
-                placeholder: TRACED_SVG
-                layout: FULL_WIDTH
-              )
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

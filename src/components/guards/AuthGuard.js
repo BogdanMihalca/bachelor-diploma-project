@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react"
-import { navigate } from "gatsby"
+import { Redirect } from "@gatsbyjs/reach-router"
 import PropTypes from "prop-types"
 import { Spinner } from "react-bootstrap"
 
@@ -19,8 +19,9 @@ const AuthGuard = props => {
   const state = getRedirectFromLocation(props)
 
   if (!user && !isLoading && pathname !== "/app/login") {
-    navigate("/app/login", { state })
+    return <Redirect to="/app/login" state={state} />
   }
+
   if (isLoading) return <Spinner />
   return <Component {...rest} />
 }
