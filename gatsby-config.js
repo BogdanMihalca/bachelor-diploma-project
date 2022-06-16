@@ -12,7 +12,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url:
-          process.env.WPGRAPHQL_URL ||
+          process.env.GATSBY_WPGRAPHQL_URL ||
           `https://bachelor.bogdanmihalca.com/graphql`,
         schema: {
           perPage: 20, // currently set to 100
