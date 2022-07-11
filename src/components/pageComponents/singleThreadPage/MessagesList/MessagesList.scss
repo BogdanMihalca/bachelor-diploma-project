@@ -1,0 +1,141 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.messages-list {
+  border-right: 5px solid $red;
+  padding-right: 2rem;
+  .blue-shadow-card {
+    background-color: #b8d7ff;
+    border: 2px solid white;
+    box-shadow: 3px 3px 4px 1px #368bec;
+  }
+  .message-article {
+    border-radius: 10px 10px 0 10px;
+    margin: 25px 0 25px 0;
+    padding: 1.5rem;
+    border-bottom: 2px solid white;
+    box-shadow: -3px 3px 4px 1px #0364d1;
+    position: relative;
+    .auth-msg-options {
+      position: absolute;
+      right: 20px;
+      .dlt-msg-btn {
+        background-color: transparent;
+        color: $red;
+        border: 0;
+        font-size: 2.5rem;
+        cursor: pointer;
+        &:hover {
+          color: rgb(255, 0, 0);
+        }
+      }
+      .upt-msg-btn {
+        background-color: transparent;
+        color: $green;
+        border: 0;
+        font-size: 2.5rem;
+        margin-left: 2rem;
+        cursor: pointer;
+        &:hover {
+          color: rgb(0, 255, 89);
+        }
+      }
+    }
+
+    .msg-user-area {
+      display: inline-flex;
+      padding-bottom: 10px;
+      align-items: flex-end;
+      padding-right: 3%;
+      border-bottom: 3px solid $blue;
+      .profile-img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        &:hover {
+          box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+      }
+      .user-name-msg {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: $blue;
+        margin-right: 1rem;
+      }
+    }
+    .message-box {
+      .close-button {
+        border-radius: 0 0 0 2.5rem;
+        padding: 1rem 2rem !important;
+        font-size: 1.4rem !important;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: yellow;
+        }
+      }
+      .submit-button {
+        border-radius: 0 0 2.5rem 0;
+        margin-left: 0.5rem;
+      }
+      .edit-message-input {
+        textarea {
+          display: block;
+          font-size: 1.8rem;
+          margin-top: 1rem;
+          padding: 0.5rem;
+          padding-left: 1rem;
+          background-color: #e6e9f9;
+          border-radius: 1rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+            rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          width: 100%;
+          border: none;
+        }
+      }
+      .details-msg {
+        margin: 0;
+        display: inline-block;
+        border-top: 2px solid $blue;
+        font-size: 1.6rem;
+        font-style: italic;
+      }
+      p {
+        font-size: 1.8rem;
+        color: $red;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .new-message-form {
+    padding-bottom: 5rem;
+    border-top: 5px solid $red;
+    margin-top: 10rem;
+    .submit-button {
+      border-radius: 0 0 2.5rem 2.5rem;
+      margin-left: 0.5rem;
+    }
+    .edit-message-input {
+      textarea {
+        display: block;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        background-color: $orange;
+        color: $red;
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+          rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        width: 100%;
+        border: none;
+      }
+    }
+  }
+}

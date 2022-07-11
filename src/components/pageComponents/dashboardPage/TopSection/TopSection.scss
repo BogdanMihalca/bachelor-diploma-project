@@ -1,0 +1,14 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.mbc-dashboard-top-section {
+  .mbc-page-title {
+    margin-top: 5rem;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .mbc-page-title {
+      margin-top: 10rem;
+    }
+  }
+}

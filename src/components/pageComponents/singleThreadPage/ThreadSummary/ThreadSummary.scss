@@ -1,0 +1,51 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.thread-summary {
+  .back-btn {
+    margin: 5rem 0;
+  }
+
+  .summary-card {
+    padding: 3rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    h2 {
+      margin-left: 2rem;
+      font-size: 2.4rem;
+      display: inline-block;
+      border-bottom: 4px solid $violet;
+      margin-bottom: 2rem;
+      span {
+        color: $red;
+        font-style: italic;
+      }
+    }
+    h5 {
+      margin: 0 2rem;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      &:not(:last-child) {
+        border-bottom: 2px solid $green;
+      }
+      span {
+        color: $red;
+        font-style: italic;
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .back-btn {
+      margin-top: 15rem;
+    }
+    .summary-card {
+      display: inline-block;
+      min-width: 50%;
+    }
+  }
+}

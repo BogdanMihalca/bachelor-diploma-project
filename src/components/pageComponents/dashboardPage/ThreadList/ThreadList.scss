@@ -1,0 +1,76 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.thread-list {
+  .list-title {
+    border-top: 3px solid $red;
+    display: inline-block;
+    padding: 1rem 5rem 0 0;
+  }
+  .blue-shadow-card {
+    background-color: #b8d7ff;
+    border: 2px solid white;
+    box-shadow: 3px 3px 4px 1px #368bec;
+  }
+  .thread-article {
+    border-radius: 15px 15px 0 15px;
+    padding: 2rem 2rem 0;
+    position: relative;
+    margin: 5rem 0;
+    max-width: 100rem;
+    .article-conn-line {
+      width: 25px;
+      height: 2px;
+      background-color: white;
+      position: relative;
+      bottom: -2px;
+      left: calc(100% - 1px);
+      box-shadow: 3px 3px 10px #3183e1;
+    }
+    h3 {
+      border-bottom: 2.5px solid white;
+      padding-left: 10px;
+      padding-bottom: 1rem;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 2.5rem;
+    }
+    p {
+      margin: 5px 10px;
+      font-size: 1.5rem;
+    }
+    .right-article-part {
+      border-top: 2.5px solid $red;
+      padding-top: 0.5rem;
+      text-align: right;
+      div {
+        text-align: left;
+      }
+      h5 {
+        margin: 5px 10px 5px 5px;
+        font-size: 1.5rem;
+        span {
+          color: $green;
+        }
+      }
+    }
+    .message {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: $grayDarker;
+      padding-bottom: 2rem;
+    }
+    .message-author {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      span {
+        color: $green;
+      }
+    }
+    .open-thread {
+      border-radius: 2.5rem 0 0 0;
+      margin-right: -2rem;
+    }
+  }
+}

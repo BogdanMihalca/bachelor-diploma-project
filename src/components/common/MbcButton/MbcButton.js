@@ -18,7 +18,7 @@ const MbcButton = ({
   } `
 
   return (
-    <div className="btn-wrapper">
+    <span className="btn-wrapper">
       <Button
         disabled={disabled}
         variant={bootstrapVariant}
@@ -35,7 +35,7 @@ const MbcButton = ({
           <span className="mbc-play-text">Vizionati videoclipul</span>
         </div>
       )}
-    </div>
+    </span>
   )
 }
 

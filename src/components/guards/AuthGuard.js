@@ -19,7 +19,7 @@ const AuthGuard = props => {
   const state = getRedirectFromLocation(props)
 
   if (!user && !isLoading && pathname !== "/app/login") {
-    return <Redirect to="/app/login" state={state} />
+    return <Redirect noThrow to="/app/login" state={state} />
   }
 
   if (isLoading) return <Spinner />

@@ -1,14 +1,19 @@
 import React from "react"
+
 import Layout from "../common/Layout/Layout"
-import useFirebaseContext from "../../context/useFirebaseContext"
+
+import HeaderApp from "../common/HeaderApp/HeaderApp"
+import TopSection from "../pageComponents/dashboardPage/TopSection/TopSection"
+import CreateNewThreadSection from "../pageComponents/dashboardPage/CreateNewThreadSection/CreateNewThreadSection"
+import ThreadList from "../pageComponents/dashboardPage/ThreadList/ThreadList"
 
 const Dashboard = () => {
-  const { signOutUser } = useFirebaseContext()
   return (
-    <Layout classes="login-page">
-      <button type="button" onClick={() => signOutUser()}>
-        LogOut
-      </button>
+    <Layout classes="dashboard-page">
+      <HeaderApp />
+      <TopSection />
+      <CreateNewThreadSection />
+      <ThreadList />
     </Layout>
   )
 }

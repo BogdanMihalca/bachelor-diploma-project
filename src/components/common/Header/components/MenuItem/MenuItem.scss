@@ -13,6 +13,11 @@
   .dropdown-toggle {
     color: white !important;
     text-align: end;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
     &:hover {
       color: $green !important;
       text-shadow: 0px 4px 3px rgba(42, 157, 143, 0.5),
@@ -43,6 +48,9 @@
       padding: 1rem 2rem !important;
     }
 
+    .dropdown-menu[data-bs-popper] {
+      left: -28px;
+    }
     .dropdown-menu {
       text-align: left;
       background-color: white;

@@ -1,0 +1,46 @@
+@use "../../../../sass/variables" as *;
+@use "../../../../sass/breakpoints" as *;
+
+.create-new-thread-section {
+  position: relative;
+  .close-button {
+    border-radius: 2.5rem 0 0 2.5rem;
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: yellow;
+    }
+  }
+  .submit-button {
+    border-radius: 0 2.5rem 2.5rem 0;
+    margin-left: 0.5rem;
+  }
+  .new-thread-input {
+    margin: 2rem 0;
+    &:first-of-type {
+      margin-top: 3rem;
+    }
+    input,
+    textarea {
+      display: block;
+      font-size: 2rem;
+      padding: 0.5rem;
+      padding-left: 1rem;
+      background-color: #e6e9f9;
+      border-radius: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+      width: 100%;
+      border: none;
+    }
+    .form-label {
+      font-size: 2.2rem;
+      padding-left: 1rem;
+      color: $grayDarker;
+    }
+  }
+}

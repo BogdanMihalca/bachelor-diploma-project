@@ -1,9 +1,9 @@
-import { GatsbyImage } from "gatsby-plugin-image"
-import { uniqueId } from "lodash"
 import React from "react"
+import { uniqueId } from "lodash"
+import { GatsbyImage } from "gatsby-plugin-image"
+
 import { Container, Row, Col } from "react-bootstrap"
 import { useFeaturesSection } from "../../../../hooks/pageHooks/homePage/useFeaturesSection"
-
 import "./FeaturesSection.scss"
 
 const FeaturesSection = () => {

@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useMemo, useState } from "react"
 import PropTypes from "prop-types"
 import { getApps, initializeApp } from "firebase/app"
 import { getAnalytics } from "firebase/analytics"
-import { getFirestore } from "firebase/firestore"
+import { doc, getFirestore, setDoc } from "firebase/firestore"
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -54,10 +54,8 @@ export const FirebaseProvider = ({ children }) => {
   const logInWithEmailAndPassword = async (email, password) => {
     setIsLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
+      .then(() => {
         // Signed in
-        const { user: signedInUser } = userCredential
-        setUser(signedInUser)
         setIsLoading(false)
         return { error: null, success: true }
       })
@@ -71,10 +69,7 @@ export const FirebaseProvider = ({ children }) => {
   const signUpWithEmailAndPassword = async (email, password) => {
     setIsLoading(true)
     return createUserWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
-        // Signed in
-        const { user: signedInUser } = userCredential
-        setUser(signedInUser)
+      .then(() => {
         setIsLoading(false)
         return { error: null, success: true }
       })
@@ -88,10 +83,7 @@ export const FirebaseProvider = ({ children }) => {
   const signInWithGoogle = async () => {
     setIsLoading(true)
     return signInWithPopup(auth, googleProvider)
-      .then(result => {
-        // The signed-in user info.
-        const { user: currentUser } = result
-        setUser(currentUser)
+      .then(() => {
         setIsLoading(false)
         return { error: null, success: true }
       })
@@ -105,11 +97,9 @@ export const FirebaseProvider = ({ children }) => {
   const signInWithFacebook = async () => {
     setIsLoading(true)
     return signInWithPopup(auth, facebookProvider)
-      .then(result => {
+      .then(() => {
         setIsLoading(false)
-        // The signed-in user info.
-        const { user: currentUser } = result
-        setUser(currentUser)
+        // The signed-in user info
         return { error: null, success: true }
       })
       .catch(error => {
@@ -157,16 +147,23 @@ export const FirebaseProvider = ({ children }) => {
       setFacebookProvider(new FacebookAuthProvider())
       setIsLoading(false)
       // Listen authenticated user
-      onAuthStateChanged(getAuth(), currentUser => {
+      onAuthStateChanged(getAuth(), async currentUser => {
         if (currentUser) {
-          // User is signed in, see docs for a list of available properties
-          const { uid, displayName, email, photoURL } = currentUser
-          setUser({ uid, displayName, email, photoURL })
-          console.log("User:", user)
+          console.log(currentUser, "User signed in")
+          try {
+            await setDoc(doc(getFirestore(app), "users", currentUser.uid), {
+              name: currentUser.displayName,
+              email: currentUser.email,
+              profilePicture: currentUser.photoURL,
+            })
+          } catch (err) {
+            console.error("writeToDB failed. reason :", err)
+          }
+
+          setUser(currentUser)
         } else {
           // User is signed out
           setUser(null)
-          console.log("User:", user)
         }
       })
     }
